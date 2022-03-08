@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    # 路由网关配置
+    gateway:
+      # 设置与服务注册发现组件结合, 这样可以采用服务名的路由策略
+      discovery:
+        locator:
+          enabled: false
+      # 配置路由规则
+      routes:
+        - id: USER-CONSUMER
+          uri: lb://stock-user
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1

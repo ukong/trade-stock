@@ -1,0 +1,27 @@
+server:
+  port: 10681
+
+spring:
+  application:
+    name: @project.artifactId@
+  main:
+    banner-mode: 'off'
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: @pom.nacos.ip@
+        namespace: @pom.nacos.namespace@
+      config:
+        server-addr: @pom.nacos.ip@
+        namespace: @pom.nacos.namespace@
+        file-extension: yml
+        prefix: @project.artifactId@
+        shared-configs: spring-boot-http.yml
+
+info:
+  name: '@project.artifactId@'
+  description: '@project.description@'
+  version: '@project.version@'
+  spring-boot-version: '@spring-boot.version@'
+  spring-cloud-version: '@spring-cloud.version@'

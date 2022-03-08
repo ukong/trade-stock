@@ -1,0 +1,3 @@
+config:
+  mysql:
+    db: trade_stock

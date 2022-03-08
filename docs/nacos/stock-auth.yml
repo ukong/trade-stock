@@ -1,0 +1,7 @@
+config:
+  mysql:
+    db: trade_stock
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
