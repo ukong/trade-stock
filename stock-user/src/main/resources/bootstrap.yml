@@ -17,7 +17,7 @@ spring:
         namespace: @pom.nacos.namespace@
         file-extension: yml
         prefix: @project.artifactId@
-        shared-configs: spring-boot-http.yml
+        shared-configs: spring-boot-http.yml,spring-boot-starter-mp.yml,spring-boot-starter-druid.yml,spring-boot-starter-redis.yml
 
 info:
   name: '@project.artifactId@'

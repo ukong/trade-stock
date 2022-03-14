@@ -1,3 +1,19 @@
 config:
   mysql:
     db: trade_stock
+
+# spring security 配置
+security:
+  oauth2:
+    client:
+      client-id: app
+      client-secret: trade-stock-app
+      scope: server
+      user-authorization-uri: http://api.trade.com/oauth/authorize
+      access-token-uri: http://api.trade.com/oauth/token
+    resource:
+      jwt:
+        key-uri: http://api.trade.com/oauth/token_key
+        key-value: trade_stock
+    authorization:
+      check-token-access: http://api.trade.com/oauth/check_token
