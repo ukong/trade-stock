@@ -8,9 +8,11 @@ spring:
           enabled: false
       # 配置路由规则
       routes:
-        - id: USER-CONSUMER
+        - id: stock-user
           uri: lb://stock-user
           predicates:
             - Path=/user/**
-          filters:
-            - StripPrefix=1
+        - id: stock-auth
+          uri: lb://stock-auth
+          predicates:
+            - Path=/oauth/**
