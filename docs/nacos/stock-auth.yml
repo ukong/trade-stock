@@ -5,3 +5,5 @@ config:
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
+  global-config:
+    banner: false
