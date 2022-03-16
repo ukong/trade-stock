@@ -11,6 +11,10 @@ public enum ApplicationErrorCodeEnum implements IErrorCodeEnum {
      */
     SUCCESS("200", "成功"),
     FAILURE("300", "系统异常"),
+    SYS_BUSY("301", "系统繁忙, 请稍候重试!"),
+    SYS_FLOW("302", "系统峰值, 请稍后请求!"),
+    NOT_FOUND("404", "呜呜呜, 人家没有这个"),
+    PARAMS_NOT_VALID("501", "参数不合法!"),
     COMPONENT_LOAD_PROPERTIES_OBJ_HAD_EXIST("000001", "配置文件加载类已经存在"),
     SYS_ERROR_ENCRYPT_SINGED(IErrorCodeEnum.MODULE_SYSTEM, "000002", "签名加密错误"),
     USER_NOT_FOUND(IErrorCodeEnum.MODULE_USER, "000003", "用户不存在!"),

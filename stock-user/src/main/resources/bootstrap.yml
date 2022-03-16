@@ -18,6 +18,28 @@ spring:
         file-extension: yml
         prefix: @project.artifactId@
         shared-configs: spring-boot-http.yml,spring-boot-starter-mp.yml,spring-boot-starter-druid.yml,spring-boot-starter-redis.yml
+    sentinel:
+      transport:
+        dashboard: 192.168.229.128:8858
+      datasource:
+        # 用户降级规则配置
+        user-degrade:
+          nacos:
+            server-addr: @pom.nacos.ip@:@pom.nacos.port@
+            namespace: @pom.nacos.namespace@
+            dataId: sentinel-user-degrade.json
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: degrade
+        # 用户限流规则配置
+        user-flow:
+          nacos:
+            server-addr: @pom.nacos.ip@:@pom.nacos.port@
+            namespace: @pom.nacos.namespace@
+            dataId: sentinel-user-flow.json
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
 
 info:
   name: '@project.artifactId@'
